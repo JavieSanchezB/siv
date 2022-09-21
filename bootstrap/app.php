@@ -41,6 +41,16 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->singleton(
+    Illuminate\Notifications\Console\NotificationTableCommand::class,
+    App\Console\NotificationTableCommand::class
+);
+
+$app->register(
+    Illuminate\Notifications\NotificationServiceProvider::class,
+    App\Console\NotificationServiceProvider::class
+);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
